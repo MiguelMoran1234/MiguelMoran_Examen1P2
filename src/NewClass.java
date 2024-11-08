@@ -7,10 +7,6 @@
  *
  * @author flash
  */
-public abstract class PC{
+public class NewClass {
     
-    private String ip;
-    private String mascara;
-    private String nombre;
- 
 }

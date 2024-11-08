@@ -25,21 +25,202 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TipoPC_Label = new javax.swing.JLabel();
+        TipoPC_ComboBox = new javax.swing.JComboBox<>();
+        IP_Label = new javax.swing.JLabel();
+        IP_TextField = new javax.swing.JTextField();
+        Mascara_Label = new javax.swing.JLabel();
+        Mascara_TextField = new javax.swing.JTextField();
+        Nombre_Label = new javax.swing.JLabel();
+        Nombre_TextField = new javax.swing.JTextField();
+        PCdeEscritorio_Label = new javax.swing.JLabel();
+        RAM_Label = new javax.swing.JLabel();
+        RAM_TextField = new javax.swing.JTextField();
+        Memoria_Label = new javax.swing.JLabel();
+        Memoria_TextField = new javax.swing.JTextField();
+        TipodeMemoria_Label = new javax.swing.JLabel();
+        TipodeMemoria_TextField = new javax.swing.JTextField();
+        Grafica_Label = new javax.swing.JLabel();
+        TarjetaGrafica_ComboBox = new javax.swing.JComboBox<>();
+        Laptop_Label = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        Marca_TextField = new javax.swing.JTextField();
+        Definicion_Label = new javax.swing.JLabel();
+        Definicion_TextField = new javax.swing.JTextField();
+        RGB_Label = new javax.swing.JLabel();
+        RGB_ComboBox = new javax.swing.JComboBox<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        TipoPC_Label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        TipoPC_Label.setText("Tipo de PC:");
+
+        TipoPC_ComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        TipoPC_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "de Escritorio", "Laptop" }));
+
+        IP_Label.setText("Direccion IP:");
+
+        Mascara_Label.setText("Marcara de red:");
+
+        Mascara_TextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Mascara_TextFieldActionPerformed(evt);
+            }
+        });
+
+        Nombre_Label.setText("Hostname:");
+
+        Nombre_TextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Nombre_TextFieldActionPerformed(evt);
+            }
+        });
+
+        PCdeEscritorio_Label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        PCdeEscritorio_Label.setText("PC de Escritorio");
+
+        RAM_Label.setText("Memoria RAM:");
+
+        Memoria_Label.setText("Capacidad de Memoria:");
+
+        TipodeMemoria_Label.setText("Tipo de Memoria:");
+
+        Grafica_Label.setText("Tarjeta Grafica:");
+
+        TarjetaGrafica_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+
+        Laptop_Label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Laptop_Label.setText("Laptop");
+
+        jLabel11.setText("Marca:");
+
+        Definicion_Label.setText("Definicion de Pantalla:");
+
+        RGB_Label.setText("Teclado RGB:");
+
+        RGB_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(TipoPC_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TipoPC_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(233, 233, 233)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Mascara_Label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mascara_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(IP_Label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(IP_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Nombre_Label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Nombre_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(342, 342, 342)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Grafica_Label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TarjetaGrafica_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PCdeEscritorio_Label)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(RAM_Label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(RAM_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Memoria_Label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Memoria_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(TipodeMemoria_Label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TipodeMemoria_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(70, 70, 70)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Laptop_Label)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Marca_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Definicion_Label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Definicion_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(RGB_Label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(RGB_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TipoPC_Label)
+                    .addComponent(TipoPC_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IP_Label)
+                    .addComponent(IP_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mascara_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Mascara_Label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Nombre_Label)
+                    .addComponent(Nombre_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PCdeEscritorio_Label)
+                    .addComponent(Laptop_Label))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RAM_Label)
+                    .addComponent(RAM_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(Marca_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Memoria_Label)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Memoria_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Definicion_Label)
+                        .addComponent(Definicion_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TipodeMemoria_Label)
+                    .addComponent(TipodeMemoria_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RGB_Label)
+                    .addComponent(RGB_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Grafica_Label)
+                    .addComponent(TarjetaGrafica_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Mascara_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mascara_TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Mascara_TextFieldActionPerformed
+
+    private void Nombre_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nombre_TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nombre_TextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +258,29 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Definicion_Label;
+    private javax.swing.JTextField Definicion_TextField;
+    private javax.swing.JLabel Grafica_Label;
+    private javax.swing.JLabel IP_Label;
+    private javax.swing.JTextField IP_TextField;
+    private javax.swing.JLabel Laptop_Label;
+    private javax.swing.JTextField Marca_TextField;
+    private javax.swing.JLabel Mascara_Label;
+    private javax.swing.JTextField Mascara_TextField;
+    private javax.swing.JLabel Memoria_Label;
+    private javax.swing.JTextField Memoria_TextField;
+    private javax.swing.JLabel Nombre_Label;
+    private javax.swing.JTextField Nombre_TextField;
+    private javax.swing.JLabel PCdeEscritorio_Label;
+    private javax.swing.JLabel RAM_Label;
+    private javax.swing.JTextField RAM_TextField;
+    private javax.swing.JComboBox<String> RGB_ComboBox;
+    private javax.swing.JLabel RGB_Label;
+    private javax.swing.JComboBox<String> TarjetaGrafica_ComboBox;
+    private javax.swing.JComboBox<String> TipoPC_ComboBox;
+    private javax.swing.JLabel TipoPC_Label;
+    private javax.swing.JLabel TipodeMemoria_Label;
+    private javax.swing.JTextField TipodeMemoria_TextField;
+    private javax.swing.JLabel jLabel11;
     // End of variables declaration//GEN-END:variables
 }

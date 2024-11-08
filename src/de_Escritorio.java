@@ -21,6 +21,4 @@ public class de_Escritorio extends PC{
         this.grafica = grafica;
     }
     
-    
-    
 }

@@ -13,7 +13,8 @@ public class Laptop extends PC{
     private String definicion;
     private boolean rgb;
 
-    public Laptop(String marca, String definicion, boolean rgb) {
+    public Laptop(String marca, String definicion, boolean rgb, String ip, String mascara, String nombre) {
+        super(ip, mascara, nombre);
         this.marca = marca;
         this.definicion = definicion;
         this.rgb = rgb;

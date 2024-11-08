@@ -14,7 +14,8 @@ public class de_Escritorio extends PC{
     private String tipo_almacenamiento;
     private boolean grafica;
 
-    public de_Escritorio(int ram, int almacenamiento, String tipo_almacenamiento, boolean grafica) {
+    public de_Escritorio(int ram, int almacenamiento, String tipo_almacenamiento, boolean grafica, String ip, String mascara, String nombre) {
+        super(ip, mascara, nombre);
         this.ram = ram;
         this.almacenamiento = almacenamiento;
         this.tipo_almacenamiento = tipo_almacenamiento;

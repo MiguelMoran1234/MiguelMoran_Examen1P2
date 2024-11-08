@@ -12,5 +12,11 @@ public abstract class PC{
     private String ip;
     private String mascara;
     private String nombre;
+
+    public PC(String ip, String mascara, String nombre) {
+        this.ip = ip;
+        this.mascara = mascara;
+        this.nombre = nombre;
+    }
  
 }

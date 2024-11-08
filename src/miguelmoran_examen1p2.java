@@ -3,15 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/**
- *
- * @author flash
- */
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class miguelmoran_examen1p2 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form miguelmoran_examen1p2
-     */
+    ArrayList<PC> computadoras = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
+    
     public miguelmoran_examen1p2() {
         initComponents();
     }
@@ -35,20 +34,24 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
         Nombre_TextField = new javax.swing.JTextField();
         PCdeEscritorio_Label = new javax.swing.JLabel();
         RAM_Label = new javax.swing.JLabel();
-        RAM_TextField = new javax.swing.JTextField();
         Memoria_Label = new javax.swing.JLabel();
         Memoria_TextField = new javax.swing.JTextField();
         TipodeMemoria_Label = new javax.swing.JLabel();
-        TipodeMemoria_TextField = new javax.swing.JTextField();
         Grafica_Label = new javax.swing.JLabel();
         TarjetaGrafica_ComboBox = new javax.swing.JComboBox<>();
         Laptop_Label = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        Marca_Label = new javax.swing.JLabel();
         Marca_TextField = new javax.swing.JTextField();
         Definicion_Label = new javax.swing.JLabel();
         Definicion_TextField = new javax.swing.JTextField();
         RGB_Label = new javax.swing.JLabel();
         RGB_ComboBox = new javax.swing.JComboBox<>();
+        Crear_Button = new javax.swing.JButton();
+        TipoMemoria_ComboBox = new javax.swing.JComboBox<>();
+        Ingresar_Label = new javax.swing.JLabel();
+        Ingresar_ComboBox = new javax.swing.JComboBox<>();
+        RAM_TextField = new javax.swing.JTextField();
+        Ingresar_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,19 +65,7 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
 
         Mascara_Label.setText("Marcara de red:");
 
-        Mascara_TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Mascara_TextFieldActionPerformed(evt);
-            }
-        });
-
         Nombre_Label.setText("Hostname:");
-
-        Nombre_TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nombre_TextFieldActionPerformed(evt);
-            }
-        });
 
         PCdeEscritorio_Label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         PCdeEscritorio_Label.setText("PC de Escritorio");
@@ -92,13 +83,36 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
         Laptop_Label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Laptop_Label.setText("Laptop");
 
-        jLabel11.setText("Marca:");
+        Marca_Label.setText("Marca:");
 
         Definicion_Label.setText("Definicion de Pantalla:");
 
         RGB_Label.setText("Teclado RGB:");
 
         RGB_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+
+        Crear_Button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Crear_Button.setText("Crear");
+        Crear_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Crear_ButtonActionPerformed(evt);
+            }
+        });
+
+        TipoMemoria_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HDD", "SSD" }));
+
+        Ingresar_Label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Ingresar_Label.setText("Ingresar con:");
+
+        Ingresar_ComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        Ingresar_Button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Ingresar_Button.setText("Ingresar");
+        Ingresar_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ingresar_ButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,9 +122,23 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(TipoPC_Label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TipoPC_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Ingresar_Label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Ingresar_ComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(TipoPC_Label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TipoPC_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addComponent(Crear_Button))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(Ingresar_Button)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(233, 233, 233)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -125,8 +153,8 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
                                 .addComponent(Nombre_Label)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nombre_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(342, 342, 342)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Grafica_Label)
@@ -146,12 +174,12 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(TipodeMemoria_Label)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TipodeMemoria_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(TipoMemoria_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(70, 70, 70)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Laptop_Label)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
+                                        .addComponent(Marca_Label)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Marca_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
@@ -162,7 +190,7 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
                                         .addComponent(RGB_Label)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(RGB_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,17 +208,25 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Nombre_Label)
-                    .addComponent(Nombre_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Nombre_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Crear_Button))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PCdeEscritorio_Label)
                     .addComponent(Laptop_Label))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RAM_Label)
-                    .addComponent(RAM_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11)
-                    .addComponent(Marca_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RAM_Label)
+                            .addComponent(Marca_Label)
+                            .addComponent(Marca_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RAM_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Ingresar_Label)
+                            .addComponent(Ingresar_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Memoria_Label)
@@ -198,29 +234,56 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
                         .addComponent(Memoria_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Definicion_Label)
                         .addComponent(Definicion_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TipodeMemoria_Label)
-                    .addComponent(TipodeMemoria_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(RGB_Label)
-                    .addComponent(RGB_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RGB_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TipoMemoria_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ingresar_Button))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Grafica_Label)
                     .addComponent(TarjetaGrafica_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Mascara_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mascara_TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Mascara_TextFieldActionPerformed
+    private void Crear_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_ButtonActionPerformed
 
-    private void Nombre_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nombre_TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Nombre_TextFieldActionPerformed
+        if (TipoPC_ComboBox.getSelectedIndex() == 0) {
+            if (TarjetaGrafica_ComboBox.getSelectedIndex() == 0) {
+                computadoras.add(new de_Escritorio(Integer.parseInt(RAM_TextField.getText()), Integer.parseInt(Memoria_TextField.getText()), TipoMemoria_ComboBox.getSelectedItem().toString(), true, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+            } else {
+                computadoras.add(new de_Escritorio(Integer.parseInt(RAM_TextField.getText()), Integer.parseInt(Memoria_TextField.getText()), TipoMemoria_ComboBox.getSelectedItem().toString(), false, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+            }
+        } else {
+            if (RGB_ComboBox.getSelectedIndex() == 0) {
+                computadoras.add(new Laptop(Marca_TextField.getText(), Definicion_TextField.getText(), true, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+            } else {
+                computadoras.add(new Laptop(Marca_TextField.getText(), Definicion_TextField.getText(), true, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+            }
+        }
+        Ingresar_ComboBox.addItem(Nombre_TextField.getText());
+        RAM_TextField.setText("");
+        Memoria_TextField.setText("");
+        IP_TextField.setText("");
+        Mascara_TextField.setText("");
+        Nombre_TextField.setText("");
+        Marca_TextField.setText("");
+        Definicion_TextField.setText("");
+    }//GEN-LAST:event_Crear_ButtonActionPerformed
+
+    private void Ingresar_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ingresar_ButtonActionPerformed
+        this.setVisible(false);
+        System.out.print(Ingresar_ComboBox.getSelectedItem() + "#");
+        String comando = sc.next();
+        if(comando.equalsIgnoreCase("exit")){
+            this.setVisible(true);
+        }
+    }//GEN-LAST:event_Ingresar_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,12 +321,17 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Crear_Button;
     private javax.swing.JLabel Definicion_Label;
     private javax.swing.JTextField Definicion_TextField;
     private javax.swing.JLabel Grafica_Label;
     private javax.swing.JLabel IP_Label;
     private javax.swing.JTextField IP_TextField;
+    private javax.swing.JButton Ingresar_Button;
+    private javax.swing.JComboBox<String> Ingresar_ComboBox;
+    private javax.swing.JLabel Ingresar_Label;
     private javax.swing.JLabel Laptop_Label;
+    private javax.swing.JLabel Marca_Label;
     private javax.swing.JTextField Marca_TextField;
     private javax.swing.JLabel Mascara_Label;
     private javax.swing.JTextField Mascara_TextField;
@@ -277,10 +345,9 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> RGB_ComboBox;
     private javax.swing.JLabel RGB_Label;
     private javax.swing.JComboBox<String> TarjetaGrafica_ComboBox;
+    private javax.swing.JComboBox<String> TipoMemoria_ComboBox;
     private javax.swing.JComboBox<String> TipoPC_ComboBox;
     private javax.swing.JLabel TipoPC_Label;
     private javax.swing.JLabel TipodeMemoria_Label;
-    private javax.swing.JTextField TipodeMemoria_TextField;
-    private javax.swing.JLabel jLabel11;
     // End of variables declaration//GEN-END:variables
 }

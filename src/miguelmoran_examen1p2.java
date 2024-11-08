@@ -10,7 +10,7 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
 
     ArrayList<PC> computadoras = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
-    
+
     public miguelmoran_examen1p2() {
         initComponents();
     }
@@ -252,36 +252,48 @@ public class miguelmoran_examen1p2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Crear_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_ButtonActionPerformed
-
-        if (TipoPC_ComboBox.getSelectedIndex() == 0) {
-            if (TarjetaGrafica_ComboBox.getSelectedIndex() == 0) {
-                computadoras.add(new de_Escritorio(Integer.parseInt(RAM_TextField.getText()), Integer.parseInt(Memoria_TextField.getText()), TipoMemoria_ComboBox.getSelectedItem().toString(), true, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+        if (PC.IPValido(IP_TextField.getText()) && PC.IPValido(Mascara_TextField.getText())) {
+            if (TipoPC_ComboBox.getSelectedIndex() == 0) {
+                if (TarjetaGrafica_ComboBox.getSelectedIndex() == 0) {
+                    computadoras.add(new de_Escritorio(Integer.parseInt(RAM_TextField.getText()), Integer.parseInt(Memoria_TextField.getText()), TipoMemoria_ComboBox.getSelectedItem().toString(), true, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+                } else {
+                    computadoras.add(new de_Escritorio(Integer.parseInt(RAM_TextField.getText()), Integer.parseInt(Memoria_TextField.getText()), TipoMemoria_ComboBox.getSelectedItem().toString(), false, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+                }
             } else {
-                computadoras.add(new de_Escritorio(Integer.parseInt(RAM_TextField.getText()), Integer.parseInt(Memoria_TextField.getText()), TipoMemoria_ComboBox.getSelectedItem().toString(), false, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+                if (RGB_ComboBox.getSelectedIndex() == 0) {
+                    computadoras.add(new Laptop(Marca_TextField.getText(), Definicion_TextField.getText(), true, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+                } else {
+                    computadoras.add(new Laptop(Marca_TextField.getText(), Definicion_TextField.getText(), true, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
+                }
             }
-        } else {
-            if (RGB_ComboBox.getSelectedIndex() == 0) {
-                computadoras.add(new Laptop(Marca_TextField.getText(), Definicion_TextField.getText(), true, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
-            } else {
-                computadoras.add(new Laptop(Marca_TextField.getText(), Definicion_TextField.getText(), true, IP_TextField.getText(), Mascara_TextField.getText(), Nombre_TextField.getText()));
-            }
+            Ingresar_ComboBox.addItem(Nombre_TextField.getText());
+            RAM_TextField.setText("");
+            Memoria_TextField.setText("");
+            IP_TextField.setText("");
+            Mascara_TextField.setText("");
+            Nombre_TextField.setText("");
+            Marca_TextField.setText("");
+            Definicion_TextField.setText("");
         }
-        Ingresar_ComboBox.addItem(Nombre_TextField.getText());
-        RAM_TextField.setText("");
-        Memoria_TextField.setText("");
-        IP_TextField.setText("");
-        Mascara_TextField.setText("");
-        Nombre_TextField.setText("");
-        Marca_TextField.setText("");
-        Definicion_TextField.setText("");
     }//GEN-LAST:event_Crear_ButtonActionPerformed
 
     private void Ingresar_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ingresar_ButtonActionPerformed
-        this.setVisible(false);
-        System.out.print(Ingresar_ComboBox.getSelectedItem() + "#");
-        String comando = sc.next();
-        if(comando.equalsIgnoreCase("exit")){
-            this.setVisible(true);
+        if (!Ingresar_ComboBox.getSelectedItem().equals("")) {
+            this.setVisible(false);
+            boolean seguir = true;
+            while (seguir) {
+                System.out.print(Ingresar_ComboBox.getSelectedItem() + "#");
+                String comando = sc.next();
+                if (comando.equalsIgnoreCase("exit")) {
+                    this.setVisible(true);
+                    seguir = false;
+                } else if (comando.equalsIgnoreCase("show")) {
+                    System.out.println("IP: " + computadoras.get(Ingresar_ComboBox.getSelectedIndex()).getIp());
+                    System.out.println("Mascara: " + computadoras.get(Ingresar_ComboBox.getSelectedIndex()).getMascara());
+                } else {
+                    System.out.println("comando invalido");
+                }
+            }
         }
     }//GEN-LAST:event_Ingresar_ButtonActionPerformed
 
